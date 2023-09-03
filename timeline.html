@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="demo.css" />
+    <title>Timeline</title>
+</head>
+<body>
+    <header>
+        <h1>Timeline</h1>
+        <code id="mouseDate"></code>
+    </header>
+    <div id="timeline">
+
+    </div>
+    <script src="./timeline.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.tl = new Timeline({
+            node: document.getElementById('timeline'),
+            onMouseUpdate: ({ position: { date }}) => document.getElementById('mouseDate').innerHTML = date.toLocaleString(),
+        });
+    </script>
+</body>
+</html>
